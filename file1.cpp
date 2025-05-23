@@ -48,7 +48,7 @@ public:
 
         Node *temp = top; // Create a temporary pointer to the top node
         top = top->next;  // Update the top pointer to the next node
-        cout << "Popped value: " << top->data << endl;
+        cout << "Popped value: " << temp->data << endl;
         delete temp;
     }
 
@@ -60,6 +60,8 @@ public:
         }
         else
         {
+            Node *current = top;
+            while (current !=NULL)
             {
                 cout << current->data << " " << endl;
                 current = current->next;
@@ -89,6 +91,13 @@ int main()
         cout << "4. exit\n";
         cout << "enter your choice:  ";
         cin >> choice;
-    }
 
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter the value to push: ";
+            cin >> value;
+
+        }
+    }
 }
