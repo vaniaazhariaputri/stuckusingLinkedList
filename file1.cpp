@@ -21,45 +21,44 @@ class Stack
     Node *top; // Pointer to the top node of the stack
 
 public:
-{
     Stack()
     {
-        top = NULL; // Intialize the stack with a null top pointer 
+        top = NULL; // Intialize the stack with a null top pointer
     }
 
     // Push operation: Insert an element onto the top of the stack
     int push(int value)
     {
         Node *newNode = new Node(); // 1. Allocate memory for the new node
-        newNode->data = value; // 2. assign value
-        newNode->next = top; // 3. set the next pointer of the new node to the top
-        top = newNode; // 4. Update the top pointer to the new node
+        newNode->data = value;      // 2. assign value
+        newNode->next = top;        // 3. set the next pointer of the new node to the top
+        top = newNode;              // 4. Update the top pointer to the new node
         cout << "Push value: " << value << endl;
         return value;
     }
-}
+
 
 // Pop operation: Remove the top most element from the stack
-void pop()
-{
-    if (isEmpty())
+    void pop()
     {
-        cout << "Stack id empty." << endl;
+        if (isEmpty())
+        {
+            cout << "Stack id empty." << endl;
+        }
+
+        Node *temp = top; // Create a temporary pointer to the top node
+        top = top->next;  // Update the top pointer to the next node
+        cout << "Popped value: " << top->data << endl;
+        delete temp;
     }
 
-    Node *temp = top; // Create a temporary pointer to the top node
-    top = top->next; // Update the top pointer to the next node
-    cout << "Popped value: " << top->data << endl;
-    delete temp;
-}
-
-void peek()
-{
-    if (top == NULL)
+    void peek()
     {
-        cout << "List is empty." << endl;
-    }
-    else
+        if (top == NULL)
+        {
+            cout << "List is empty." << endl;
+        }
+        else
         {
             {
                 cout << current->data << " " << endl;
@@ -69,8 +68,17 @@ void peek()
         } // return the value of the top node
     }
 
-    // IsEmpty operation: Check if the stack is empty
-    bool isEmpty()
+// IsEmpty operation: Check if the stack is empty
+bool isEmpty()
+{
+    return top == NULL;
+}
 
+int main()
+{
+    Stack stack;
+
+    int choice = 0;
+    int value;
 
 }
