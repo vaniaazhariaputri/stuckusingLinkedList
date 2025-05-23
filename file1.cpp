@@ -21,6 +21,7 @@ class Stack
     Node *top; // Pointer to the top node of the stack
 
 public:
+{
     Stack()
     {
         top = NULL; // Intialize the stack with a null top pointer 
@@ -35,6 +36,15 @@ public:
         top = newNode; // 4. Update the top pointer to the new node
         cout << "Push value: " << value << endl;
         return value;
+    }
+}
+
+// Pop operation: Remove the top most element from the stack
+void pop()
+{
+    if (isEmpty())
+    {
+        cout << "Stack id empty." << endl;
     }
 
 }
