@@ -52,4 +52,8 @@ void pop()
     cout << "Popped value: " << top->data << endl;
     delete temp;
 }
+
+void peek()
+{
+
 }
